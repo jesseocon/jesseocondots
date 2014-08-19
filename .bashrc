@@ -9,10 +9,6 @@ export PATH="/usr/local/sbin":$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:/usr/local/mysql/bin
 
-export SECRET_KEY='sk_test_clqX6lFFPoGnAMwAHHSvAj1I'
-export MANDRILL_APIKEY='QdefnbUe5I5o3YoDJUeJdg'
-
-
 # GENERAL ALIAS SECTION
 alias ll='ls -la'
 alias home='cd ~'

@@ -10,6 +10,7 @@ set backspace=indent,eol,start
 
 "store lots of :cmdline history
 set history=1000
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
@@ -23,13 +24,15 @@ set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
 set wrap        "dont wrap lines
 set linebreak   "wrap lines at convenient points
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+
+
+
 
 if v:version >= 703
     "undo settings
@@ -39,11 +42,9 @@ if v:version >= 703
     set colorcolumn=+1 "mark the ideal max text width
 endif
 
-
-
 "default indent settings
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 
@@ -286,7 +287,8 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
-"default switch between panes
+map <F3> :vsplit<CR>
+map <F4> :split<CR>
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
@@ -320,4 +322,3 @@ autocmd BufReadPost fugitive://*
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
-
